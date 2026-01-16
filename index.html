@@ -12,7 +12,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="./images/logo.png">
 
     <script src="./js/loading.js" defer></script>
-    <script src="./js/login.js" defer></script>
     <script src="./js/weather.js" defer></script>
 </head>
 
@@ -26,24 +25,6 @@
         </header>
 
         <main id="content" class="main">
-            <section id="loginFormContainer" class="login-form" aria-hidden="true">
-                <h2 class="login-form__title">Вход</h2>
-                <form id="loginForm" class="login-form__form" aria-label="Форма входа">
-                    <div class="login-form__group">
-                        <label for="username" class="login-form__label">Имя пользователя:</label>
-                        <input type="text" id="username" name="username" class="login-form__input" aria-required="true">
-                    </div>
-
-                    <div class="login-form__group">
-                        <label for="password" class="login-form__label">Пароль:</label>
-                        <input type="password" id="password" name="password" class="login-form__input"
-                            aria-required="true">
-                    </div>
-
-                    <button type="submit" class="login-form__submit" aria-label="Войти">Войти</button>
-                </form>
-                <div id="errorDiv" class="login-form__error" aria-live="polite"></div>
-            </section>
 
         <section id="weatherContainer" class="weather-container">
             <h1 class="weather-container__title">Погода в Москве сейчас</h1>

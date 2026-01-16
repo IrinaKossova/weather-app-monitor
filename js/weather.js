@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const apiKeyWeather = "87b31996d9276087e1e5d2d7338ce72c";
   const weatherDataDiv = document.getElementById("weatherData");
   const loadingIndicator = document.getElementById("loadingIndicator");
   const weatherTemplate = document.getElementById("weatherTemplate");
@@ -8,10 +7,13 @@ document.addEventListener("DOMContentLoaded", function () {
     withLoading(
       loadingIndicator,
       new Promise((resolve, reject) => {
-        fetch(
-          `https://api.openweathermap.org/data/2.5/weather?q=Moscow&appid=${apiKeyWeather}&units=metric&lang=ru`
-        )
-          .then((response) => response.json())
+        fetch("/weather")
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Server error fetching weather");
+            }
+            return response.json();
+          })
           .then((data) => {
             const weatherData = {
               temperature: data.main.temp,

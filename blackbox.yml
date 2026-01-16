@@ -1,0 +1,7 @@
+modules:
+  http_2xx_check:
+    prober: http
+    timeout: 5s
+    http:
+      preferred_ip_protocol: "ipv4"
+      valid_status_codes: [200]

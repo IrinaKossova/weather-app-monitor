@@ -62,113 +62,6 @@ body {
     align-items: center;
 }
 
-/* Login Form */
-.login-form {
-    background: var(--transparent-white);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--light-blue);
-    border-radius: 20px;
-    padding: 30px;
-    margin-bottom: 20px;
-    width: 100%;
-    max-width: 400px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-}
-
-.login-form__title {
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--dark-purple);
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.login-form__group {
-    margin-bottom: 20px;
-}
-
-.login-form__label {
-    display: block;
-    font-size: 16px;
-    color: var(--dark-purple);
-    margin-bottom: 8px;
-}
-
-.login-form__input {
-    width: 95%;
-    padding: 10px;
-    border: 1px solid var(--light-blue);
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.2);
-    color: var(--dark-purple);
-    font-size: 16px;
-    transition: border-color 0.3s ease;
-}
-
-.login-form__input:focus {
-    border-color: var(--turquoise);
-}
-
-.login-form__input::placeholder {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.login-form__submit {
-    position: relative;
-    display: block;
-    margin: 20px auto 0;
-    width: fit-content;
-    padding: 12px 24px;
-    background: #FFDA63;
-    border-radius: 50%;
-    color: var(--dark-purple);
-    font-size: 16px;
-    font-weight: 700;
-    box-shadow: 0 4px 15px rgba(0, 196, 204, 0.3);
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    overflow: hidden;
-}
-
-.login-form__submit::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 150%;
-    height: 150%;
-    background: repeating-linear-gradient(45deg,
-            transparent,
-            transparent 10px,
-            rgba(255, 255, 255, 0.3) 10px,
-            rgba(255, 255, 255, 0.3) 20px);
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.login-form__submit:hover::before {
-    opacity: 1;
-}
-
-.login-form__submit:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 196, 204, 0.5);
-}
-
-.login-form__submit:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 10px rgba(0, 196, 204, 0.3);
-}
-
-.login-form__submit:focus {
-    box-shadow: 0 0 0 3px rgba(77, 208, 225, 0.5);
-}
-.login-form__error {
-    color: #ff6e6e;
-    text-align: center;
-    margin-top: 10px;
-}
-
 /* Weather Container */
 .weather-container {
     background: var(--transparent-white);
@@ -235,6 +128,7 @@ body {
 .weather-data__value {
     font-weight: bold;
     font-size: 2em;
+    text-wrap: wrap
 }
 
 .weather-data__icon use {
@@ -243,10 +137,14 @@ body {
 
 /* Loading Indicator */
 .loading-indicator {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     padding: 20px;
+}
+
+.loading-indicator.active {
+    display: flex;
 }
 
 .loading-indicator__icon {
